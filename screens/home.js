@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { View, Text, Flatlist, StyleSheet, Alert, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, Alert, SafeAreaView } from "react-native";
+import { FlatList } from 'react-native-web/dist/index';
 import axios from "axios";
 import { ListItem } from "react-native-elements";
 
-export default class HomeScreen extends Component{
+export default class HomeScreen extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -16,7 +17,7 @@ export default class HomeScreen extends Component{
     }
     getStars=()=>{
         const {url}=this.state;
-        axios.getUrl().then(response=>{
+        axios.get(url).then(response=>{
             return this.setState({
                 listData: response.data.data
             })
