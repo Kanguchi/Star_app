@@ -10,7 +10,7 @@ export default function App() {
 
 const appStackNavigatior = createStackNavigator(
   {
-    home :{ HomeScreen, 
+    home :{ screen:HomeScreen, 
     navigationOptions:{
       headerShown: false,
     }
